@@ -155,11 +155,11 @@ To run the CPU tests, use `pytest`.
 If you use this code, please cite our paper.
 
 ```bibtex
-@inproceedings{hatami2027subliminal,
-  title     = {Subliminal Learning in Vision-Language Models},
-  author    = {Hatami, Arman and Aalishah, Romina and Monosov, Ilya E.},
-  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-  year      = {2027}
+@article{hatami2026subliminal,
+  title={Subliminal Learning in Vision-Language Models},
+  author={Hatami, Arman and Aalishah, Romina and Monosov, Ilya E},
+  journal={arXiv preprint arXiv:2611.08538},
+  year={2026}
 }
 ```
 
