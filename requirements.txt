@@ -1,0 +1,19 @@
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.7.1+cu128
+torchvision==0.22.1+cu128
+transformers==4.54.0
+tokenizers==0.21.1
+accelerate==1.9.0
+peft==0.16.0
+safetensors==0.5.3
+huggingface-hub==0.34.2
+numpy==1.26.4
+scipy==1.16.0
+scikit-learn==1.6.1
+pillow==11.3.0
+matplotlib==3.10.3
+tqdm==4.67.1
+requests==2.32.4
+backoff==2.2.1
+soundfile==0.13.1
+pytest==8.4.1
