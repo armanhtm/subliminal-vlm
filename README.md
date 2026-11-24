@@ -33,7 +33,7 @@ data/                    made by the build scripts
 outputs/                 made by the experiment scripts
 ```
 
-The four models are `qwen2-vl-2b`, `qwen2.5-vl-3b`, `qwen2.5-vl-7b` and `phi-4-mm`. They download from Hugging Face the first time you use them, pinned to the exact revisions I used.
+The four models are `qwen2-vl-2b`, `qwen2.5-vl-3b`, `qwen2.5-vl-7b` and `phi-4-mm`. They download from Hugging Face the first time you use them, pinned to the exact revisions We used.
 
 ## 1. Install
 
@@ -53,7 +53,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-I used PyTorch 2.7.1 with CUDA 12.8 and one RTX 5090 with 32 GB. Any recent NVIDIA GPU with that much memory should work.
+We used PyTorch 2.7.1 with CUDA 12.8 and one RTX 5090 with 32 GB. Any recent NVIDIA GPU with that much memory should work.
 
 ## 2. Build the data
 
@@ -114,7 +114,7 @@ python -m subvlm.table outputs
 
 There are five models in every run. The reference model is the untouched VLM. The biased teacher was trained to pick the target and the control teacher was trained on the same pairs with neutral labels. Each teacher then wrote numbers for the same shape images, and a fresh copy of the reference model was trained on each set of numbers. The transfer effect is the target rate of the biased student minus the target rate of the control student, in percentage points, with a paired bootstrap 95% interval and an exact McNemar p value. Chance is 16.67% since every panel has six images.
 
-I checked this code against the runs behind the paper. On the same GPU it rebuilds the same data files byte for byte and gives the same scores and number sequences. Training on another GPU will not give identical adapters, so expect the effects to move by up to about one point.
+We checked this code against the runs behind the paper. On the same GPU it rebuilds the same data files byte for byte and gives the same scores and number sequences. Training on another GPU will not give identical adapters, so expect the effects to move by up to about one point.
 
 ## Time and memory
 
@@ -144,7 +144,7 @@ Evaluation panels hold six images and the correct letter.
 
 Put your files in a folder under `data/` next to the existing ones and call the Python modules directly. Every module prints its options with `python -m subvlm.train -h` and so on.
 
-**A new model.** Add it to `MODELS` in `subvlm/models.py`. Models that use the Qwen chat template work right away. Other models need their own prompt building, like the one I wrote for Phi-4.
+**A new model.** Add it to `MODELS` in `subvlm/models.py`. Models that use the Qwen chat template work right away. Other models need their own prompt building, like the one We wrote for Phi-4.
 
 **A new carrier task.** `subvlm/data/carrier.py` can change how many numbers the teacher writes and how many digits each has. You can also write your own carrier rows with an image, a prompt and the allowed number range. The constraint in `subvlm/generate.py` only needs `range_min`, `range_max`, `sequence_length` and `number_width`.
 
@@ -169,4 +169,4 @@ The code is released under the MIT license. The animal images come from [Fr0styK
 
 ## Acknowledgements
 
-This work builds on the original subliminal learning study by Cloud et al. (Nature, 2026). I thank the authors of Qwen2-VL, Qwen2.5-VL, Phi-4-multimodal, FaceSynthetics and the Animals dataset for making their work public.
+This work builds on the original subliminal learning study by Cloud et al. (Nature, 2026). We thank the authors of Qwen2-VL, Qwen2.5-VL, Phi-4-multimodal, FaceSynthetics and the Animals dataset for making their work public.
